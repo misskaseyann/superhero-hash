@@ -104,6 +104,32 @@ class Superhero {
          * @return year
          */
         int get_year();
+        
+        int getPage_id() const;
+        
+        const std::string &getName() const;
+        
+        const std::string &getUrlslug() const;
+        
+        const std::string &getId() const;
+        
+        const std::string &getAlignment() const;
+        
+        char getEye_color() const;
+        
+        char getHair_color() const;
+        
+        char getSex() const;
+        
+        const std::string &getGsm() const;
+        
+        bool isAlive() const;
+        
+        int getAppearances() const;
+        
+        const std::string &getFirst_appearance() const;
+        
+        int getYear() const;
     
     private:
         int page_id;
