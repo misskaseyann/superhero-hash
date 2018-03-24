@@ -3,5 +3,5 @@ project(hashing)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES src/main.cpp include/My_Hash.h include/Superhero.h src/Superhero.cpp include/My_HashNode.h)
+set(SOURCE_FILES src/main.cpp include/My_Hash.h include/Superhero.h src/Superhero.cpp include/HashNode.h)
 add_executable(hashing ${SOURCE_FILES})

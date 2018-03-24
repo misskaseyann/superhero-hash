@@ -5,20 +5,15 @@
 #ifndef HASHING_MY_HASH_H
 #define HASHING_MY_HASH_H
 
-#include "Superhero.h"
-
-template <typename K, typename V>
+template <typename K, typename V, typename  F = KeyHash<K>>
 class My_Hash {
     public:
-        My_Hash(const K &key, const V &value) : key(key), value(value), next(NULL) {
+        My_Hash() {
+                table = new My_HashNode<K, V> *[TABLE_SIZE]
         }
-        
-        bool insert(const )
     
     private:
-        K key;
-        V value;
-        My_Hash *next;
+        My_HashNode<K, V> **table;
 };
 
 #endif //HASHING_MY_HASH_H
