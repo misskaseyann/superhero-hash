@@ -6,9 +6,15 @@
 #define HASHING_SUPERHERO_H
 
 #include <string>
+#include <ostream>
 
 class Superhero {
     public:
+        /**
+         * Basic constructor.
+         */
+        Superhero();
+        
         /**
          * General constructor for the class.
          *
@@ -43,93 +49,95 @@ class Superhero {
         /**
          * @return page id
          */
-        int get_page_id();
+        int getPage_id() const;
         
         /**
          * @return name
          */
-        std::string get_name();
+        const std::string &getName() const;
         
         /**
          * @return url slug
          */
-        std::string get_urlslug();
+        const std::string &getUrlslug() const;
         
         /**
-         * @return id
+         * @return get id
          */
-        std::string get_id();
+        const std::string &getId() const;
         
         /**
          * @return alignment
          */
-        std::string get_alignment();
+        const std::string &getAlignment() const;
         
         /**
          * @return eye color
          */
-        char get_eye_color();
+        char getEye_color() const;
         
         /**
          * @return hair color
          */
-        char get_hair_color();
+        char getHair_color() const;
         
         /**
          * @return sex
          */
-        char get_sex();
+        char getSex() const;
         
         /**
          * @return gsm
          */
-        std::string get_gsm();
+        const std::string &getGsm() const;
         
         /**
          * @return alive
          */
-        bool get_alive();
+        bool isAlive() const;
         
         /**
-         * @return appearances
+         * @return appearance
          */
-        int get_appearances();
+        int getAppearances() const;
         
         /**
          * @return first appearance
          */
-        std::string get_first_appearance();
+        const std::string &getFirst_appearance() const;
         
         /**
          * @return year
          */
-        int get_year();
-        
-        int getPage_id() const;
-        
-        const std::string &getName() const;
-        
-        const std::string &getUrlslug() const;
-        
-        const std::string &getId() const;
-        
-        const std::string &getAlignment() const;
-        
-        char getEye_color() const;
-        
-        char getHair_color() const;
-        
-        char getSex() const;
-        
-        const std::string &getGsm() const;
-        
-        bool isAlive() const;
-        
-        int getAppearances() const;
-        
-        const std::string &getFirst_appearance() const;
-        
         int getYear() const;
+        
+        void setPage_id(int page_id);
+        
+        void setName(const std::string &name);
+        
+        void setUrlslug(const std::string &urlslug);
+        
+        void setId(const std::string &id);
+        
+        void setAlignment(const std::string &alignment);
+        
+        void setEye_color(char eye_color);
+        
+        void setHair_color(char hair_color);
+        
+        void setSex(char sex);
+        
+        void setGsm(const std::string &gsm);
+        
+        void setAlive(bool alive);
+        
+        void setAppearances(int appearances);
+        
+        void setFirst_appearance(const std::string &first_appearance);
+        
+        void setYear(int year);
+        
+        friend std::ostream &operator<<(std::ostream &os, const Superhero &superhero);
     
     private:
         int page_id;
