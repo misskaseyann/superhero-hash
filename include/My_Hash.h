@@ -64,6 +64,7 @@ class My_Hash {
             return hashVal %= 17011;
         }
         
+        // modified from https://www.daniweb.com/programming/software-development/threads/231987/string-hash-function
         size_t hash3(const std::string x) const {
             unsigned int hashVal = 0;
             for (char i : x) {
