@@ -28,11 +28,17 @@ class My_Hash {
             return whichList.size() > 1;
         }
         
-//        Superhero &get(const std::string name) const {
-//            // get the value of string name by using hash func
-//            std::list<Superhero> whichList = lists[hash1(name)];
-//            std::find(begin(whichList), end(whichList), name);
-//        }
+        Superhero &get(const std::string name) const {
+            // get the value of string name by using hash func
+            Superhero s;
+            auto & whichList = lists[hash1(name)];
+            for (auto const& i : whichList) {
+                if (i.getName() == name) {
+                    s = i;
+                }
+            }
+            return s;
+        }
     
     private:
         std::vector<std::list<Superhero>> lists;
