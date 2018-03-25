@@ -124,7 +124,10 @@ int main() {
     else {
         std::cout << "Unable to open file.";
     }
+    
     // print number of collisions
     std::cout << "Number Collisions: " << collisions << std::endl;
+    //Superhero s = hash.get("Silhouette (Hand) (Earth-616)");
+    //std::cout << s << std::endl;
     return 0;
 }
