@@ -5,15 +5,47 @@
 #ifndef HASHING_MY_HASH_H
 #define HASHING_MY_HASH_H
 
-template <typename K, typename V, typename  F = KeyHash<K>>
+#include <list>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <functional>
+#include <iostream>
+#include <deque>
+#include "Superhero.h"
+
 class My_Hash {
     public:
-        My_Hash() {
-                table = new My_HashNode<K, V> *[TABLE_SIZE]
+        explicit My_Hash(int size = 17011) : currsize{0} {
+            lists.resize(17011);
+        };
+        
+        bool insert(const Superhero & s) {
+            std::cout << hash1(s.getName()) << std::endl;
+            auto & whichList = lists[hash1(s.getName())];
+            whichList.push_front(s);
+            std::cout<<whichList.size()<<std::endl;
+            return whichList.size() > 1;
         }
+        
+//        Superhero &get(const std::string name) const {
+//            // get the value of string name by using hash func
+//            std::list<Superhero> whichList = lists[hash1(name)];
+//            std::find(begin(whichList), end(whichList), name);
+//        }
     
     private:
-        My_HashNode<K, V> **table;
+        std::vector<std::list<Superhero>> lists;
+        int currsize;
+        
+        size_t hash1(const std::string x) const {
+            unsigned int hashVal = 0;
+            for (char i : x) {
+                hashVal += i;
+            }
+            hashVal %= 17011;
+            return hashVal;
+        }
 };
 
 #endif //HASHING_MY_HASH_H

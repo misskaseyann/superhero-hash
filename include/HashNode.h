@@ -5,14 +5,16 @@
 #ifndef HASHING_HASHNODE_H
 #define HASHING_HASHNODE_H
 
+#include "Superhero.h"
+
 class HashNode {
     public:
-        HashNode(int k, int v) {
+        HashNode(Superhero k, int v) {
             this->k = k;
             this->v = v;
         }
         
-        int getKey() {
+        Superhero getKey() {
             return k;
         }
         
@@ -21,7 +23,7 @@ class HashNode {
         }
         
     private:
-        int k;
+        Superhero k;
         int v;
 };
 
