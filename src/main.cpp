@@ -3,12 +3,13 @@
 #include <string>
 #include <sstream>
 #include "../include/Superhero.h"
+#include "../include/My_Hash.h"
 
 int main() {
     // track number of collisions
     int collisions = 0;
     // creating instance of hashmap
-    
+    My_Hash hash = My_Hash();
     // loading the file
     std::string line;
     std::ifstream file ("/Users/kaseystowell/Documents/workspace/hashing/marvel-wikia-data.csv");
@@ -106,11 +107,15 @@ int main() {
                         x++;
                         break;
                     default:
-                        x = 0;
+                        // nothing
+                        std::cout << "nothing";
                 }
                 if (x > 11) {
                     x = 0;
-                    std::cout << sh << std::endl;
+                   if (hash.insert(sh)) {
+                       collisions ++;
+                   }
+                   
                 }
             }
         }
@@ -120,6 +125,6 @@ int main() {
         std::cout << "Unable to open file.";
     }
     // print number of collisions
-    std::cout << "Collisions..." << std::endl;
+    std::cout << "Number Collisions: " << collisions << std::endl;
     return 0;
 }
