@@ -128,6 +128,6 @@ int main() {
     // print number of collisions
     std::cout << "Number Collisions: " << collisions << std::endl;
     //Superhero s = hash.get("Silhouette (Hand) (Earth-616)");
-    std::cout << s << std::endl;
+    //std::cout << s << std::endl;
     return 0;
 }
